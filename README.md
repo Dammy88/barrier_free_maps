@@ -8,6 +8,10 @@ I very willingly accept criticism and possible participation in the improvement 
 
 I hope it will be to your liking, and above all that it will remain open source.
 
+## Live Demo
+
+I have a live demo of the application. You can [view it here](https://barrier-free-maps.firebaseapp.com/).
+
 ## Technology Used
 
 * Vue.js
