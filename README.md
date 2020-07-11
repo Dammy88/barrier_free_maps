@@ -21,6 +21,7 @@ I have a live demo of the application. You can [view it here](https://barrier-fr
 * Vuex
 * Vuetify
 * Firebase
+* Express (Node.js)
 
 ## Project setup
 ```
