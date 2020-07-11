@@ -4,6 +4,8 @@ This is the source code for a four-part series I wrote on creating a Vue.js appl
 
 This web application aims to offer a service of collective participation (according to the prince of the rainbow of computer ethics) that allows you to report on the map offered by Open Street everything related to architectural barriers, various obstacles that make a passage inaccessible, or to report the lack of adequate reporting, the lack of a reference point (especially for people with disabilities).
 
+At the moment, the application has some bugs with respect to the responsive representation of content, and works correctly in "desktop mode".
+
 I very willingly accept criticism and possible participation in the improvement of the source code.
 
 I hope it will be to your liking, and above all that it will remain open source.
