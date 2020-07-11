@@ -3,17 +3,17 @@
                 <v-flex xs12>
                   <div v-if="isAdding" class="hidden-sm-and-down">
                     <div v-if="!isNoAdded" class="hidden-sm-and-down">
-                      <div>
-                        <table>
+                      <div class="table-wrapper">
+                        <table class="fl-table">
                           <thead>
                               <tr>
-                                <th scope="col">Marker ID on Firebase</th>
-                                <th scope="col">ID</th>
-                                <th scope="col">Latitude</th>
-                                <th scope="col">Longitude</th>
-                                <th scope="col">Tooltip</th>
-                                <th scope="col">Is Visible ?</th>
-                                <th scope="col">Remove/Add</th>
+                                <th>Marker ID on Firebase</th>
+                                <th>ID</th>
+                                <th>Latitude</th>
+                                <th>Longitude</th>
+                                <th>Tooltip</th>
+                                <th>Is Visible ?</th>
+                                <th>Remove/Add</th>
                               </tr>
                           </thead>
                           <tbody>
@@ -21,20 +21,20 @@
                                 v-for="(item, indexA) in userMarkers"
                                 :key="indexA"
                               >
-                                <td scope="row" data-label="Marker on Firebase">{{ indexA }}</td>
-                                <td data-label="ID">
+                                <td>{{ indexA }}</td>
+                                <td>
                                     {{ item.id_m}}
                                 </td>
-                                <td data-label="Latitude">
+                                <td>
                                   {{item.position.lat}}
                                 </td>
-                                <td data-label="Longitude">
+                                <td>
                                   {{item.position.lng}}
                                 </td>
-                                <td data-label="Tooltip">
+                                <td>
                                   {{item.tooltip}}
                                 </td>
-                                <td data-label="Is Visible ?" style="text-align: center">
+                                <td style="text-align: center">
                                   <input
                                     v-model="item.visible"
                                     type="checkbox"
@@ -53,32 +53,32 @@
                                 v-for="(item, indexB) in markers"
                                 :key="indexB"
                               >
-                                <td scope="row" data-label="Setting up temporary marking ">{{ 'Setting up temporary marking ' + (indexB + 1) }}</td>
-                                <td data-label="ID">
+                                <td>{{ 'Setting up temporary marking ' + (indexB + 1) }}</td>
+                                <td>
                                   <input class="w3-input w3-animate-input"
                                     v-model.number="item.id_m"
                                     type="number"
                                   >
                                 </td>
-                                <td data-label="Latitude">
+                                <td>
                                   <input class="w3-input w3-animate-input"
                                     v-model.number="item.position.lat"
                                     type="number"
                                   >
                                 </td>
-                                <td data-label="Longitude">
+                                <td>
                                   <input class="w3-input w3-animate-input"
                                     v-model.number="item.position.lng"
                                     type="number"
                                   >
                                 </td>
-                                <td data-label="Tooltip">
+                                <td>
                                   <input class="w3-input w3-animate-input"
                                     v-model="item.tooltip"
                                     type="text"
                                   >
                                 </td>
-                                <td data-label="Is Visible ?" style="text-align: center">
+                                <td style="text-align: center">
                                   <input
                                     v-model="item.visible"
                                     type="checkbox"
@@ -98,17 +98,17 @@
                     </div>
                     <div v-else-if="isNoAdded" class="hidden-sm-and-down">
                         <v-layout row>
-                            <div>
-                              <table>
+                            <div class="table-wrapper">
+                              <table class="fl-table">
                                 <thead>
                                     <tr>
-                                      <th scope="col">Marker ID on Firebase</th>
-                                      <th scope="col">ID</th>
-                                      <th scope="col">Latitude</th>
-                                      <th scope="col">Longitude</th>
-                                      <th scope="col">Tooltip</th>
-                                      <th scope="col">Is Visible ?</th>
-                                      <th scope="col">Remove/Add</th>
+                                      <th>Marker ID on Firebase</th>
+                                      <th>ID</th>
+                                      <th>Latitude</th>
+                                      <th>Longitude</th>
+                                      <th>Tooltip</th>
+                                      <th>Is Visible ?</th>
+                                      <th>Remove/Add</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -116,20 +116,20 @@
                                       v-for="(item, indexA) in userMarkers"
                                       :key="indexA"
                                     >
-                                      <td scope="row" data-label="Marker on Firebase">{{ indexA }}</td>
-                                      <td data-label="ID">
+                                      <td>{{ indexA }}</td>
+                                      <td>
                                           {{ item.id_m}}
                                       </td>
-                                      <td data-label="Latitude">
+                                      <td>
                                         {{item.position.lat}}
                                       </td>
-                                      <td data-label="Longitude">
+                                      <td>
                                         {{item.position.lng}}
                                       </td>
-                                      <td data-label="Tooltip">
+                                      <td>
                                         {{item.tooltip}}
                                       </td>
-                                      <td data-label="Is Visible ?" style="text-align: center">
+                                      <td style="text-align: center">
                                         <input
                                           v-model="item.visible"
                                           type="checkbox"
@@ -152,17 +152,17 @@
                   
                   <div v-else-if="!isNoAdded" class="hidden-sm-and-down">
                     <p>Describe briefly in the "tooltip" field a clear description of the architectural barrier:</p>
-                    <div>
-                      <table>
+                    <div class="table-wrapper">
+                      <table class="fl-table">
                         <thead>
                             <tr>
-                              <th scope="col">Marker ID on Firebase</th>
-                              <th scope="col">id_m</th>
-                              <th scope="col">Latitude</th>
-                              <th scope="col">Longitude</th>
-                              <th scope="col">Tooltip</th>
-                              <th scope="col">Is Visible ?</th>
-                              <th scope="col">Remove/Add</th>
+                              <th>Marker ID on Firebase</th>
+                              <th>id_m</th>
+                              <th>Latitude</th>
+                              <th>Longitude</th>
+                              <th>Tooltip</th>
+                              <th>Is Visible ?</th>
+                              <th>Remove/Add</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -171,32 +171,32 @@
                               v-for="(item, indexB) in markers"
                               :key="indexB"
                             >
-                              <td scope="row" data-label="Setting up temporary marking ">{{ 'Setting up temporary marking ' + (indexB + 1) }}</td>
-                              <td data-label="ID">
+                              <td>{{ 'Setting up temporary marking ' + (indexB + 1) }}</td>
+                              <td>
                                 <input class="w3-input w3-animate-input"
                                   v-model.number="item.id_m"
                                   type="number"
                                 >
                               </td>
-                              <td data-label="Latitude">
+                              <td>
                                 <input class="w3-input w3-animate-input"
                                   v-model.number="item.position.lat"
                                   type="number"
                                 >
                               </td>
-                              <td data-label="Longitude">
+                              <td>
                                 <input class="w3-input w3-animate-input"
                                   v-model.number="item.position.lng"
                                   type="number"
                                 >
                               </td>
-                              <td data-label="Tooltip">
+                              <td>
                                 <input class="w3-input w3-animate-input"
                                   v-model="item.tooltip"
                                   type="text"
                                 >
                               </td>
-                              <td data-label="Is Visible ?" style="text-align: center">
+                              <td style="text-align: center">
                                 <input
                                   v-model="item.visible"
                                   type="checkbox"
@@ -326,89 +326,132 @@ export default {
 
 <style>
     
-body {
-  font-family: "Open Sans", sans-serif;
-  line-height: 1.25;
+*{
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
 }
-
-table {
-  border: 1px solid #ccc;
-  border-collapse: collapse;
-  margin: 0;
-  padding: 0;
-  width: 100%;
-  table-layout: fixed;
+body{
+    font-family: Helvetica;
+    -webkit-font-smoothing: antialiased;
+    /*background: rgba( 71, 147, 227, 1);*/
 }
-
-table caption {
-  font-size: 1.5em;
-  margin: .5em 0 .75em;
-}
-
-table tr {
-  background-color: #f8f8f8;
-  border: 1px solid #ddd;
-  padding: .35em;
-}
-
-table th,
-table td {
-  padding: .625em;
-  text-align: center;
-}
-
-table th {
-  font-size: .85em;
-  letter-spacing: .1em;
-  text-transform: uppercase;
-}
-
-@media screen and (max-width: 600px) {
-  table {
-    border: 0;
-  }
-
-  table caption {
-    font-size: 1.3em;
-  }
-  
-  table thead {
-    border: none;
-    clip: rect(0 0 0 0);
-    height: 1px;
-    margin: -1px;
-    overflow: hidden;
-    padding: 0;
-    position: absolute;
-    width: 1px;
-  }
-  
-  table tr {
-    border-bottom: 3px solid #ddd;
-    display: block;
-    margin-bottom: .625em;
-  }
-  
-  table td {
-    border-bottom: 1px solid #ddd;
-    display: block;
-    font-size: .8em;
-    text-align: right;
-  }
-  
-  table td::before {
-    /*
-    * aria-label has no advantage, it won't be read inside a table
-    content: attr(aria-label);
-    */
-    content: attr(data-label);
-    float: left;
-    font-weight: bold;
+h2{
+    text-align: center;
+    font-size: 18px;
     text-transform: uppercase;
-  }
-  
-  table td:last-child {
-    border-bottom: 0;
-  }
+    letter-spacing: 1px;
+    color: white;
+    padding: 30px 0;
+}
+
+/* Table Styles */
+
+.table-wrapper{
+    margin: 10px 70px 70px;
+    box-shadow: 0px 35px 50px rgba( 0, 0, 0, 0.2 );
+}
+
+.fl-table {
+    border-radius: 5px;
+    font-size: 12px;
+    font-weight: normal;
+    border: none;
+    border-collapse: collapse;
+    width: 100%;
+    max-width: 100%;
+    white-space: nowrap;
+    background-color: white;
+}
+
+.fl-table td, .fl-table th {
+    text-align: center;
+    padding: 8px;
+}
+
+.fl-table td {
+    border-right: 1px solid #f8f8f8;
+    font-size: 12px;
+}
+
+.fl-table thead th {
+    color: #ffffff;
+    background: #4FC3A1;
+}
+
+
+.fl-table thead th:nth-child(odd) {
+    color: #ffffff;
+    background: #324960;
+}
+
+.fl-table tr:nth-child(even) {
+    background: #F8F8F8;
+}
+
+/* Responsive */
+
+@media (max-width: 767px) {
+    .fl-table {
+        display: block;
+        width: 100%;
+    }
+    .table-wrapper:before{
+        content: "Scroll horizontally >";
+        display: block;
+        text-align: right;
+        font-size: 11px;
+        color: white;
+        padding: 0 0 10px;
+    }
+    .fl-table thead, .fl-table tbody, .fl-table thead th {
+        display: block;
+    }
+    .fl-table thead th:last-child{
+        border-bottom: none;
+    }
+    .fl-table thead {
+        float: left;
+    }
+    .fl-table tbody {
+        width: auto;
+        position: relative;
+        overflow-x: auto;
+    }
+    .fl-table td, .fl-table th {
+        padding: 20px .625em .625em .625em;
+        height: 60px;
+        vertical-align: middle;
+        box-sizing: border-box;
+        overflow-x: hidden;
+        overflow-y: auto;
+        width: 120px;
+        font-size: 13px;
+        text-overflow: ellipsis;
+    }
+    .fl-table thead th {
+        text-align: left;
+        border-bottom: 1px solid #f7f7f9;
+    }
+    .fl-table tbody tr {
+        display: table-cell;
+    }
+    .fl-table tbody tr:nth-child(odd) {
+        background: none;
+    }
+    .fl-table tr:nth-child(even) {
+        background: transparent;
+    }
+    .fl-table tr td:nth-child(odd) {
+        background: #F8F8F8;
+        border-right: 1px solid #E6E4E4;
+    }
+    .fl-table tr td:nth-child(even) {
+        border-right: 1px solid #E6E4E4;
+    }
+    .fl-table tbody td {
+        display: block;
+        text-align: center;
+    }
 }
 </style>
