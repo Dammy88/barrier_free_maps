@@ -203,8 +203,8 @@
                                 >
                               </td>
                                       <div v-if="!isAdded">
-                                      <v-btn color="green" dark @click="add(item)"
-                                          >ADD</v-btn>
+                                      <v-btn color="green" dark @click="add(item)">ADD</v-btn>
+                                      <v-btn color="primary" @click="cancel(indexB)">Cancel</v-btn>
                                       </div>
                                       <div v-else>
                                           <h6>Marker {{item.id_m}} added! </h6>
@@ -212,9 +212,6 @@
                             </tr>
                         </tbody>
                       </table>
-                      <v-flex mt-4>
-                          <v-btn color="primary" @click="cancel()">Cancel</v-btn>
-                      </v-flex>
                     </div>
                   </div>
                 </v-flex>
@@ -255,11 +252,12 @@ export default {
         this.getIdCount();
     },
     methods: {
-        cancel(){
+        cancel(indexB){
             this.$store.state.adding = true;
             this.$store.state.noAdded = true;
             this.$store.state.added = false;
-            alert('Operation aborted!');
+            this.markers.splice(indexB, 1);
+            this.userMarkers.splice(indexB, 1);
         },
         getMarkers() {
                 this.$store.dispatch('getUserMarkers');
