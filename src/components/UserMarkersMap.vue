@@ -2,7 +2,7 @@
     <v-layout row wrap class="meal-plans">
             <v-flex xs12>
                 <v-card>
-                  <div v-if="isAdding" class="hidden-sm-and-down">
+                  <div v-if="isAdding">
                   <v-layout row>
                     <v-flex xs12 class="text-xs-center display-1 font-weight-black my-5">
                       <p>To add an architectural barrier marker, click on the map!
@@ -71,7 +71,7 @@
                             </l-marker>
                         </l-map> 
                   </div>
-                  <div v-else class="hidden-sm-and-down">
+                  <div v-else>
                         <l-map
                             :zoom.sync="zoom"
                             :options="mapOptions"
@@ -227,8 +227,8 @@ export default {
         attributionControl: false,
         zoomSnap: true,
       },
-      zoom: 10,
-      minZoom: 3,
+      zoom: 3,
+      minZoom: 2,
       maxZoom: 20,
       zoomPosition: 'topleft',
       attributionPosition: 'bottomright',

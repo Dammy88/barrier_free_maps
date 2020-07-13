@@ -5,12 +5,8 @@
                 <h1>My Markers</h1>
             </v-flex>
         </v-layout>
-        <v-layout row>
-            <div>
                 <user-markers-map></user-markers-map>
                 <user-markers-table></user-markers-table>
-            </div>
-        </v-layout>
     </v-container>
 </template>
 

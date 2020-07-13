@@ -1,8 +1,8 @@
 <template>
     <v-layout row wrap>
                 <v-flex xs12>
-                  <div v-if="isAdding" class="hidden-sm-and-down">
-                    <div v-if="!isNoAdded" class="hidden-sm-and-down">
+                  <div v-if="isAdding">
+                    <div v-if="!isNoAdded">
                       <div>
                         <table>
                           <thead>
@@ -40,7 +40,7 @@
                                     type="checkbox"
                                   >
                                 </td>
-                                <div v-if="!isRemoved" class="hidden-sm-and-down">
+                                <div v-if="!isRemoved">
                                     <v-btn color="red" dark @click="removeA(indexA, item)"
                                         >REMOVE</v-btn>
                                 </div>
@@ -84,11 +84,11 @@
                                     type="checkbox"
                                   >
                                 </td>
-                                        <div v-if="!isAdded" class="hidden-sm-and-down">
+                                        <div v-if="!isAdded">
                                         <v-btn color="green" dark @click="add(item)"
                                             >ADD</v-btn>
                                         </div>
-                                        <div v-else class="hidden-sm-and-down">
+                                        <div v-else>
                                             <h6>Marker {{item.id_m}} added! </h6>
                                         </div>
                               </tr>
@@ -96,7 +96,7 @@
                         </table>
                       </div>
                     </div>
-                    <div v-else-if="isNoAdded" class="hidden-sm-and-down">
+                    <div v-else-if="isNoAdded">
                         <v-layout row>
                             <div>
                               <table>
@@ -135,7 +135,7 @@
                                           type="checkbox"
                                         >
                                       </td>
-                                      <div v-if="!isRemoved" class="hidden-sm-and-down">
+                                      <div v-if="!isRemoved">
                                           <v-btn color="red" dark @click="removeA(indexA, item)"
                                               >REMOVE</v-btn>
                                       </div>
@@ -150,7 +150,7 @@
                     </div>
                   </div>
                   
-                  <div v-else-if="!isNoAdded" class="hidden-sm-and-down">
+                  <div v-else-if="!isNoAdded">
                     <p>Describe briefly in the "tooltip" field a clear description of the architectural barrier:</p>
                     <div>
                       <table>
@@ -202,7 +202,7 @@
                                   type="checkbox"
                                 >
                               </td>
-                                      <div v-if="!isAdded" class="hidden-sm-and-down">
+                                      <div v-if="!isAdded">
                                       <v-btn color="green" dark @click="add(item)"
                                           >ADD</v-btn>
                                       </div>

@@ -1,5 +1,5 @@
 <template>
-        <div v-if="isAuthenticated" class="hidden-sm-and-down">
+        <div v-if="isAuthenticated">
            <v-layout row wrap>
                 <v-flex xs12>
                   <div>
