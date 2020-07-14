@@ -222,7 +222,13 @@
 export default {
     name: 'UserMarkersTable',
     computed: {
-        idCount(){
+        countIndex() {
+          return this.$store.state.countIndex;
+        },
+        isCountIndex() {
+          return this.$store.getters.isCountIndex;
+        },
+        idCount() {
           return this.$store.state.idCount;
         },
         userMarkers() {
@@ -234,16 +240,16 @@ export default {
         isAuthenticated() {
             return this.$store.getters.isAuthenticated;
         },
-        isAdded(){
+        isAdded() {
             return this.$store.getters.isAdded;
         },
-        isNoAdded(){
+        isNoAdded() {
             return this.$store.getters.isNoAdded;
         },
-        isAdding(){
+        isAdding() {
             return this.$store.getters.isAdding;
         },
-        isRemoved(){
+        isRemoved() {
             return this.$store.getters.isRemoved;
         }
     },
@@ -252,12 +258,15 @@ export default {
         this.getIdCount();
     },
     methods: {
-        cancel(indexB){
-            this.$store.state.adding = true;
-            this.$store.state.noAdded = true;
-            this.$store.state.added = false;
+        cancel(indexB) {
+            this.$store.dispatch('decCountIndex');
             this.markers.splice(indexB, 1);
-            this.userMarkers.splice(indexB, 1);
+            //this.userMarkers.splice(indexB, 1);
+            if(this.isCountIndex){
+              this.$store.state.adding = true;
+              this.$store.state.noAdded = true;
+              this.$store.state.added = false;
+            };
         },
         getMarkers() {
                 this.$store.dispatch('getUserMarkers');
@@ -268,24 +277,6 @@ export default {
         getIdCount() {
                 this.$store.dispatch('getIdCount');
             },
-        addMarker: function(event) {
-            if (this.isAuthenticated) {
-            const newMarker = {
-                id_m: this.$store.state.idCount,
-                draggable: false,
-                position: { lat: event.latlng.lat, lng: event.latlng.lng },
-                visible: true,
-            };
-            this.$store.state.adding = false;
-            this.$store.state.added = false;
-            this.$store.state.noAdded = false;
-            this.markers.push(newMarker);
-            this.userMarkers.push(newMarker);
-            this.$router.push('/menu');
-            } else {
-                this.$router.push('/sign-in');
-            }
-        },
         add(item) {
                 if (this.isAuthenticated) {
                     this.$store.dispatch('addMarker', item);

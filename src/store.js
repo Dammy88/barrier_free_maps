@@ -10,7 +10,6 @@ export default new Vuex.Store({
     state: {
         markers: [],
         user: null,
-        users: null,
         isAuthenticated: false,
         userMarkers: [],
         globalMarkers:[],
@@ -19,9 +18,12 @@ export default new Vuex.Store({
         noAdded: false,
         adding: true,
         removed: false,
-        iss : 18
+        countIndex: 0
     },
     mutations: {
+        setCountIndex(state, payload){
+            state.countIndex = payload;
+        },
         setIdCount(state, payload){
             state.idCount = payload;
         },
@@ -54,6 +56,12 @@ export default new Vuex.Store({
             }
     },
     actions: {      
+        incCountIndex(){
+            this.state.countIndex++;
+        },
+        decCountIndex(){
+            this.state.countIndex--;
+        },
         userLogin({ commit }, { email, password }) {
             firebase
                 .auth()
@@ -152,7 +160,7 @@ export default new Vuex.Store({
                     commit('setUserMarkers', snapshot.val());
                 });
         },
-       getGlobalMarkers({state, commit}){
+       getGlobalMarkers({commit}){
             return firebase
             .database()
             .ref('global')
@@ -176,6 +184,9 @@ export default new Vuex.Store({
         },
         isRemoved(state) {
             return state.adding !== null && state.adding !== undefined && state.removed !== false;
+        },
+        isCountIndex(state){
+            return state.countIndex !== null && state.countIndex !== undefined && state.countIndex === 0;
         }
     }
 });

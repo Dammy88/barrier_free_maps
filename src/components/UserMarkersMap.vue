@@ -257,12 +257,12 @@ export default {
             position: { lat: event.latlng.lat, lng: event.latlng.lng },
             visible: true,
           };
+          this.$store.dispatch('incCountIndex');
           this.$store.state.adding = false;
           this.$store.state.added = false;
           this.$store.state.noAdded = false;
           this.markers.push(newMarker);
           this.userMarkers.push(newMarker);
-          this.$router.push('/menu');
         } else {
             this.$router.push('/sign-in');
         }
